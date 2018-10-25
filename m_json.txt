@@ -1,0 +1,6 @@
+[
+ {"deny": "*"},
+ {"allow": "*@domain.local1"},
+ {"allow": "*@domain.local2"},
+ {"allow": "*@domain.local3"}
+ ]

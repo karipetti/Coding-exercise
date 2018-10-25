@@ -1,0 +1,21 @@
+echo "Installing epel depot"
+sudo yum install epel-release
+echo "Installing nodejs"
+sudo yum install nodejs
+echo "Installing maildev"
+sudo npm install -g maildev
+echo "Create the service file"
+sudo vim /etc/systemd/system/maildev.service
+cat m_service.txt >> maildev.service
+echo "Create the config directory in opt"
+sudo mkdir /opt/config
+echo "Create the file to allow domains"
+sudo vim /opt/config/maildev.json
+cat m_json.txt >> maildev.json
+echo "Create rules for firewalld"
+sudo firewall-cmd --zone = public --add-service = smtp
+sudo firewall-cmd --zone = public --add-service = smtp --permanent
+echo "Start and make the maildev service enabled"
+sudo systemctl start maildev
+sudo systemctl status maildev
+sudo systemctl enable maildev

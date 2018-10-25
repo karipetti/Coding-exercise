@@ -1,0 +1,11 @@
+[Unit]
+ Description = Maildev SMTP and web server
+
+[Service]
+ ExecStart = / bin / maildev -w 25 -s 80 --outgoing-host NOMDUSERVEURMAIL --outgoing-port 25 --auto --auto-relay-relay-rules /opt/config/maildev.json
+ User = root
+ Restart = on-failure
+ RestartSec = 5
+
+[Install]
+ WantedBy = default.target
