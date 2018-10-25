@@ -1,3 +1,4 @@
+echo "Installing pre-requisites for maildev
 echo "Installing epel depot"
 sudo yum install epel-release
 echo "Installing nodejs"
