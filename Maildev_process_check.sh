@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #To Check if maildev process is running or not
 ps -eaf | grep [m]aildev >/dev/null
 if [ $? -ne 0 ]
